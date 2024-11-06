@@ -1,10 +1,9 @@
-
-import './index.css'
+import './App.css'
 import App from './App.tsx'
-import './theme.css';
+import './styles/tailwind.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import CounterProvider from './CounterContext';
+import { CounterProvider } from './context/CounterContext';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>

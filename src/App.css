@@ -1,23 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root container styling */
 #root {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background: linear-gradient(135deg, #e0e7ff, #f3f4f6); /* Subtle gradient background */
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
+/* Modern, glass-effect logo */
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  height: 5rem;
+  padding: 1rem;
+  will-change: transform, filter;
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 1.5rem rgba(100, 108, 255, 0.5));
+  transform: scale(1.1);
 }
 
+/* Subtle spinning animation for React logo */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -33,10 +45,72 @@
   }
 }
 
+/* Card with glassmorphism effect */
 .card {
-  padding: 2em;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.25); /* Semi-transparent */
+  backdrop-filter: blur(10px); /* Glass effect */
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-0.5rem) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Descriptive text with modern muted color */
 .read-the-docs {
-  color: #888;
+  color: #4b5563;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+/* Responsive grid for layout */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  width: 100%;
+}
+
+/* Buttons with gradient and smooth hover */
+button {
+  background: linear-gradient(135deg, #4f46e5, #6d28d9);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+  background: linear-gradient(135deg, #6d28d9, #4f46e5);
+  transform: translateY(-2px);
+}
+
+/* Inputs with modern, clean style */
+input[type="number"] {
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  color: #111827;
+  transition: background-color 0.3s ease;
+}
+input[type="number"]:focus {
+  background: rgba(255, 255, 255, 0.7);
+  outline: 2px solid #4f46e5;
+}
+
+/* General link styling */
+a {
+  color: #4f46e5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #6d28d9;
 }
